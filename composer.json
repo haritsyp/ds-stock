@@ -13,6 +13,7 @@
         "backpack/permissionmanager": "6.0.11",
         "doctrine/dbal": "2.13.9",
         "fideloper/proxy": "4.4.1",
+        "haruncpi/laravel-id-generator": "1.1",
         "laravel/framework": "6.20.44",
         "laravel/tinker": "2.7.2"
     },

@@ -10,6 +10,14 @@
 </li>
 
 <li class="nav-item nav-dropdown">
+    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-boxes"></i> Purchase</a>
+    <ul class="nav-dropdown-items">
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('purchase-order') }}'><i class='nav-icon la la-circle'></i> Purchase Order</a></li>
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('supplier') }}'><i class='nav-icon la la-circle'></i> Supplier</a></li>
+    </ul>
+</li>
+
+<li class="nav-item nav-dropdown">
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-boxes"></i> Inventory</a>
     <ul class="nav-dropdown-items">
     </ul>
@@ -24,4 +32,3 @@
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('permission') }}"><i class="nav-icon la la-key"></i> <span>Permissions</span></a></li>
     </ul>
 </li>
-

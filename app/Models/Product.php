@@ -18,4 +18,8 @@ class Product extends Model
         return $this->belongsToMany(Category::class, 'product_has_categories', 'product_id', 'category_id');
     }
 
+    public function getFullNameAttribute()
+    {
+        return $this->sku . ' - ' . $this->name;
+    }
 }

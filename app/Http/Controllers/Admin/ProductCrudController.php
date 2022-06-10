@@ -17,6 +17,7 @@ class ProductCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
+
     //use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
@@ -39,12 +40,20 @@ class ProductCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('sku');
+
+        CRUD::addColumns([
+            [
+                'name' => 'sku',
+                'label' => 'SKU',
+                'type' => 'closure',
+                'function' => function ($entry) {
+                    return view('page.product.card-name', compact('entry'))->render();
+                }
+            ]
+        ]);
+
         CRUD::column('barcode');
-        CRUD::column('name');
-        CRUD::column('price');
-        CRUD::column('special_price');
-        CRUD::column('updated_at');
+
         CRUD::addColumns([
             [
                 'name' => 'is_active',
